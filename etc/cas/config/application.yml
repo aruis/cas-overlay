@@ -1,2 +1,12 @@
 info:
   description: CAS Configuration
+
+cas:
+  tgc:
+    encryptionKey: tJABwJaN-lxnHkeNAnjsg80eHtduLP4AKpmMnVHC-fk
+    signingKey: 9FV6grOI5oYXiklPV3v5NQ0twIzA_QXw284IPk0FEYl41DsdhGayVaFrvmYy_LF48-CVY-19BBJROvADurKE-A
+  webflow:
+    encryption:
+      key: mgDxVNdtJpcIUFBw
+    signing:
+      key: j-3ZGOvBoFdO8c2wc-vPFAoNqAZtrxFhNgGORNh4JJQj5vFLq3cdGT-u9iqTRKp0QxhngOV3qE7e8cTD4CUscg

@@ -88,8 +88,8 @@ task generateKeys {
   doLast {
     println 'Generating keys for CAS...'
     ['cas.tgc.encryptionKey': 256, 'cas.tgc.signingKey': 512, 'cas.webflow.encryption.key': 96, 'cas.webflow.signing.key': 512].each { key, size ->
-        def octetKey = OctJwkGenerator.generateJwk(size)
-        def params = octetKey.toParams(JsonWebKey.OutputControlLevel.INCLUDE_SYMMETRIC)
+        def octetKey = org.jose4j.jwk.OctJwkGenerator.generateJwk(size)
+        def params = octetKey.toParams(org.jose4j.jwk.JsonWebKey.OutputControlLevel.INCLUDE_SYMMETRIC)
         println "${key}=${params.get('k')}"
     }
   }
@@ -125,7 +125,7 @@ task debug {
             args = [
                 "build/libs/cas.war",
                 ]
-                
+
             println "Started ${commandLine}"
         }
     }

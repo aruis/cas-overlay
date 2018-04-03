@@ -13,6 +13,8 @@ buildscript {
     }
 }
 
+apply plugin: "io.spring.dependency-management"
+
 subprojects {
     task allDependenciesInsight(type: DependencyInsightReportTask, description: "Produce insight information for all dependencies") {}
     task allDependencies(type: DependencyReportTask, description: "Display a graph of all project dependencies") {}
@@ -37,6 +39,6 @@ task generateKeys {
 
 dependencyManagement {
     imports {
-        mavenBom "org.apereo.cas:cas-server-support-bom:${cas.version}"
+        mavenBom "org.apereo.cas:cas-server-support-bom:${project.'cas.version'}"
     }
 }
